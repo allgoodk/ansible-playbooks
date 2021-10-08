@@ -1,35 +1,40 @@
 ---
 - name: Install hadoop
-  yum:
-    name: hadoop
-    state: latest
+  hosts: all
 
-- name: Install hadoop hdfs
-  yum:
-    name: hadoop-hdfs
-    state: latest
+  tasks:
 
-- name: Install hadoop libhdfs
-  yum:
-    name: hadoop-libhdfs
-    state: latest
+  - name: Install hadoop
+    yum:
+      name: hadoop
+      state: latest
 
-- name: Install YARN
-  yum:
-    name: hadoop-yarn
-    state: latest
+  - name: Install hadoop hdfs
+    yum:
+      name: hadoop-hdfs
+      state: latest
 
-- name: Install mapreduce
-  yum:
-    name: hadoop-mapreduce
-    state: latest
+  - name: Install hadoop libhdfs
+    yum:
+      name: hadoop-libhdfs
+      state: latest
 
-- name: Install hadoop client
-  yum:
-    name: hadoop-client
-    state: latest
+  - name: Install YARN
+    yum:
+      name: hadoop-yarn
+      state: latest
 
-- name: Install openssl
-  yum:
-    name: openssl
-    state: latest
+  - name: Install mapreduce
+    yum:
+      name: hadoop-mapreduce
+      state: latest
+
+  - name: Install hadoop client
+    yum:
+      name: hadoop-client
+      state: latest
+
+  - name: Install openssl
+    yum:
+      name: openssl
+      state: latest
