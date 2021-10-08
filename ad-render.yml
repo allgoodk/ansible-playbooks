@@ -1,0 +1,13 @@
+---
+- name: MstrExporter
+  hosts: all
+
+  tasks:
+
+  - name: Download an artifact from a repo
+    community.general.maven_artifact:
+      version: latest
+      group_id: com.badoo.uds
+      artifact_id: ad-render
+      repository_url: 'https://nexus.bumble.dev/service/rest/repository/browse/maven-bi'
+      dest: /opt/ad-render.jar
