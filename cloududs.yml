@@ -3,7 +3,6 @@
   hosts: all
 
   tasks:
-
   - name: Install hadoop
     yum:
       name: hadoop
