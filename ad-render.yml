@@ -5,7 +5,7 @@
   tasks:
 
   - name: Download an artifact from a repo
-    community.general.maven_artifact:
+    maven_artifact:
       version: latest
       group_id: com.badoo.uds
       artifact_id: ad-render
