@@ -1,44 +1,26 @@
 ---
 - name: Install hadoop
   hosts: all
+  become: yes
 
   tasks:
   - name: Install hadoop
-    yum:
-      name: hadoop
-      state: present
+    yum: name=hadoop
 
   - name: Install hadoop hdfs
-    yum:
-      name: hadoop-hdfs
-      state: present
+    yum: name=hadoop-hdfs
 
   - name: Install hadoop libhdfs
-    yum:
-      name: hadoop-libhdfs
-      state: present
+    yum: name=hadoop-libhdfs
 
   - name: Install YARN
-    yum:
-      name: hadoop-yarn
-      state: present
+    yum: name=hadoop-yarn
 
   - name: Install mapreduce
-    yum:
-      name: hadoop-mapreduce
-      state: present
+    yum: name=hadoop-mapreduce
 
   - name: Install hadoop client
-    yum:
-      name: hadoop-client
-      state: present
+    yum: name=hadoop-client
 
   - name: Install openssl
-    yum:
-      name: openssl
-      state: present
-
-  - name: List ansible packages and register result to print with debug later.
-    yum:
-      list: ansible
-    register: result
+    yum: name=openssl
